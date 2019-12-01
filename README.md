@@ -7,5 +7,5 @@ Geolokacijska storitev omogoča deljenje geolokacije ter hranjenje in iskanje ge
 Za shranjevanje podatkov se uporablja podatkovna baza MongoDB, ki podpira [geoprostorne poizvedbe](https://docs.mongodb.com/manual/geospatial-queries).
 
 ```bash
-docker-compose -f stack.yml up
+docker-compose -f docker-compose.yml up
 ```

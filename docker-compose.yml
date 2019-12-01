@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  mongo:
+    image: mongo:3.4
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: rso26root
+      MONGO_INITDB_ROOT_PASSWORD: rso26pw
+    ports:
+      - 26001:27017
+  geolocation:
+    image: rso26/geolocation:1.0-SNAPSHOT-1
+    environment:
+      KUMULUZEE_MONGOCLIENT_CONNECTIONSTRING: mongodb://rso26root:rso26pw@mongo:27017
+    ports:
+      - 8084:8084
