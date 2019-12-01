@@ -1,0 +1,16 @@
+kumuluzee:
+  name: geolocation
+  env:
+    name: dev
+  version: 1.0.0
+  server:
+    base-url: http://localhost:8084
+    http:
+      port: 8084
+  openapi:
+    spec:
+      enabled: true
+    ui:
+      enabled: true
+  mongoclient:
+    connection-string: mongodb://rso26root:rso26pw@localhost:26001
