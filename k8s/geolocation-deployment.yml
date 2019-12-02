@@ -13,15 +13,13 @@ spec:
         app: geolocation
     spec:
       containers:
-        - image: rso26/geolocation:1.0.0-SNAPSHOT-4.1
+        - image: rso26/geolocation:1.0.0-SNAPSHOT-5.1
           name: geolocation
           env:
             - name: KUMULUZEE_DISCOVERY_CLUSTER
               value: gcloud
             - name: KUMULUZEE_DISCOVERY_ETCD_HOSTS
               value: http://etcd:2379
-            - name: KUMULUZEE_SERVER_BASEURL
-              value: http://35.204.82.105:8080
           ports:
             - containerPort: 8084
               name: server
@@ -35,7 +33,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 8084
+    - port: 80
       protocol: TCP
       targetPort: server
   selector:
