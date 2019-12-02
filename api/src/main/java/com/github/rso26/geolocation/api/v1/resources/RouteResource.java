@@ -1,6 +1,7 @@
 package com.github.rso26.geolocation.api.v1.resources;
 
 import com.github.rso26.geolocation.services.beans.RouteBean;
+import com.kumuluz.ee.common.runtime.EeRuntime;
 import com.mongodb.client.model.geojson.Point;
 import com.mongodb.client.model.geojson.Position;
 import io.swagger.v3.oas.annotations.Operation;
@@ -29,6 +30,14 @@ public class RouteResource {
 
     @Context
     protected UriInfo uriInfo;
+
+    @GET
+    @Path("instanceid")
+    public Response getInstanceId() {
+        String instanceId =
+                "{\"instanceId\" : \"" + EeRuntime.getInstance().getInstanceId() + "\"}";
+        return Response.ok(instanceId).build();
+    }
 
     @GET
     @Operation(summary = "Get route by uuid", tags = {"route"}, description = "Return route details.",

@@ -13,7 +13,7 @@ spec:
         app: geolocation
     spec:
       containers:
-        - image: rso26/geolocation:1.0.0-SNAPSHOT-5.1
+        - image: rso26/geolocation:1.0.0-SNAPSHOT-6.1
           name: geolocation
           env:
             - name: KUMULUZEE_DISCOVERY_CLUSTER

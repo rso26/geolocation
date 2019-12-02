@@ -24,10 +24,8 @@ public class Milestone1Resource {
     @GET
     @Path("instanceid")
     public Response getInstanceId() {
-
         String instanceId =
                 "{\"instanceId\" : \"" + EeRuntime.getInstance().getInstanceId() + "\"}";
-
         return Response.ok(instanceId).build();
     }
 
@@ -36,21 +34,10 @@ public class Milestone1Resource {
     public Response info() {
         JsonObject json = Json.createObjectBuilder()
                 .add("clani", Json.createArrayBuilder().add("at4005"))
-                .add("opis_projekta", "Tema projekta, ki ga razvija skupina 26 je platforma za iskanje in organizacijo prevozov.\n" +
-                        "\n" +
-                        "Portal nam med drugim omogoča:\n" +
-                        "\n" +
-                        "objavo prevozov (in vodenih izletov)\n" +
-                        "iskanje po katalogu aktualnih prevozov\n" +
-                        "obveščanje o novih prevozih, ki ustrezajo podanim parametrom iskanja (vstop, izstop, čas, tip vozila, ipd.)\n" +
-                        "upravljanje prevoza (pridružitev, preklic, zapustitev, pregled dejavnosti oziroma aktivnosti v obliki dnevnika dogodkov)\n" +
-                        "dodajanje komentarjev (besedila, slik, kratkih videoposnetkov) na oglasno desko posameznega prevoza in\n" +
-                        "deljenje geolokacije voznika (opcijsko tudi potnika/ov) v realnem času.\n" +
-                        "Cilj projekta je torej razviti programsko rešitev (\"cloud native\"), ki bo izkoriščala prednosti oblačnega okolja in temeljila na arhitekturi mikrostoritev (krajše MS)\n" +
-                        "\n")
+                .add("opis_projekta", "Tema projekta, ki ga razvija skupina 26 je platforma za iskanje in organizacijo prevozov. Portal nam med drugim omogoča: objavo prevozov (in vodenih izletov), iskanje po katalogu aktualnih prevozov, obveščanje o novih prevozih, ki ustrezajo podanim parametrom iskanja (vstop, izstop, čas, tip vozila, ipd.), upravljanje prevoza (pridružitev, preklic, zapustitev, pregled dejavnosti oziroma aktivnosti v obliki dnevnika dogodkov), dodajanje komentarjev (besedila, slik, kratkih videoposnetkov) na oglasno desko posameznega prevoza in deljenje geolokacije voznika (opcijsko tudi potnika/ov) v realnem času. Cilj projekta je torej razviti programsko rešitev (\"cloud native\"), ki bo izkoriščala prednosti oblačnega okolja in temeljila na arhitekturi mikrostoritev (krajše MS).")
                 .add("mikrostoritve", Json.createArrayBuilder()
-                        .add("http://35.204.19.241:8080/v1/route")
-//                        .add("http://35.204.19.234:8080/v1/ride_offers")
+                        .add("http://35.204.157.186/v1/ride_offers/instanceid")
+                        .add("http://35.204.19.241/v1/route/instanceid")
                 )
                 .add("github", Json.createArrayBuilder()
                         .add("https://github.com/rso26/ride_catalog")
@@ -60,8 +47,8 @@ public class Milestone1Resource {
                         .add("https://github.com/rso26/timeline")
                 )
                 .add("travis", Json.createArrayBuilder()
-                        .add("https://travis-ci.org/jmezna/rso-image-catalog")
                         .add("https://travis-ci.org/rso26/ride_catalog")
+                        .add("https://travis-ci.org/rso26/geolocation")
                         .add("https://travis-ci.org/rso26/notification_mngt")
                 )
                 .add("dockerhub", Json.createArrayBuilder()
