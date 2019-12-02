@@ -25,6 +25,7 @@
         <kumuluzee-openapi.version>1.1.0-SNAPSHOT</kumuluzee-openapi.version>
         <hibernate-ogm-mongodb.version>5.4.1.Final</hibernate-ogm-mongodb.version>
         <narayana-jta.version>5.10.0.Final</narayana-jta.version>
+        <kumuluzee-discovery.version>1.1.1</kumuluzee-discovery.version>
     </properties>
 
     <repositories>
@@ -77,6 +78,12 @@
                 <groupId>org.jboss.narayana.jta</groupId>
                 <artifactId>narayana-jta</artifactId>
                 <version>${narayana-jta.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.kumuluz.ee.discovery</groupId>
+                <artifactId>kumuluzee-discovery-etcd</artifactId>
+                <version>${kumuluzee-discovery.version}</version>
             </dependency>
 
             <dependency>

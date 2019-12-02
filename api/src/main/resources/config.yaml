@@ -14,3 +14,6 @@ kumuluzee:
       enabled: true
   mongoclient:
     connection-string: mongodb://rso26root:rso26pw@localhost:26001
+  discovery:
+    etcd:
+      hosts: http://etcd:2379
